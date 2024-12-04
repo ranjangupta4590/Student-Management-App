@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Student Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Student Management App built with React and Tailwind CSS. The app allows users to view and manage student data. It supports both desktop and mobile views with pagination and infinite scrolling. The app provides a dynamic interface for listing student information, either in a table format for desktop users or as cards for mobile users.
 
-## Available Scripts
+# Live Demo : https://student-management-app-nine.vercel.app/
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Pagination (Desktop)**: Users can navigate through student data in pages.
+- **Infinite Scrolling (Mobile)**: On mobile devices, more students are loaded automatically as the user scrolls down.
+- **Responsive Design**: The app adapts to both mobile and desktop screen sizes.
+- **Loading State**: A loading message is displayed while data is being fetched.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend**: React.js, Tailwind CSS
+- **State Management**: React Hooks (`useState`, `useEffect`)
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
 
-### `npm test`
+## Live Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can view the live demo of the application at:  
+[Student Management App](https://student-management-app-nine.vercel.app/)
 
-### `npm run build`
+## Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Make sure you have the following installed:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Node.js](https://nodejs.org/) (version 14.x or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-### `npm run eject`
+### 1. Clone the Repository
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clone the repository to your local machine:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/ranjangupta4590/Student-Management-App.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Install Dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Navigate into the project directory and install the required dependencies:
 
-## Learn More
+```bash
+cd Student-Management-App
+npm install
+# OR
+yarn install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Start the Development Server
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run the app locally in development mode, use the following command:
 
-### Code Splitting
+```bash
+npm start
+# OR
+yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The app should now be running on [http://localhost:3000](http://localhost:3000).
 
-### Analyzing the Bundle Size
+### 4. Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+There are no specific environment variables required for this app, as it fetches the student data from a mock API.
 
-### Making a Progressive Web App
+### 5. Build the Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To create a production build of the app, run:
 
-### Advanced Configuration
+```bash
+npm run build
+# OR
+yarn build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+After building, you can serve the app with:
 
-### Deployment
+```bash
+npm run serve
+# OR
+yarn serve
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## File Structure
 
-### `npm run build` fails to minify
+```
+/src
+  /components
+    StudentCard.js      // Displays student data as cards (mobile view)
+    StudentTable.js     // Displays student data in a table (desktop view)
+    Pagination.js       // Pagination component for navigating through pages
+  /utils
+    getStudents.js      // Mock API function to fetch student data
+  App.js                // Main app file
+  index.js              // Entry point for React application
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributing
+
+Feel free to fork this repository, submit issues, and open pull requests. Contributions are always welcome!
+
+## License
+
+This project is open-source and available under the MIT License.
