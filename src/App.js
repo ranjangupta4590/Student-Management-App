@@ -86,11 +86,11 @@ const App = () => {
   }, [isMobile, hasMore, loading]);
 
   return (
-    <div className="container mx-auto">
+    <div className="flex flex-col h-screen">
       <h1 className="text-2xl font-bold text-center mb-4 border-b-2 py-2 shadow-b-md">
         Students Management Page
       </h1>
-      <div className="p-4">
+      <div className="p-4 flex-grow">
         {isMobile ? (
           <div>
             {students.map((student, index) => (
@@ -100,20 +100,12 @@ const App = () => {
             {!hasMore && !loading && (
               <div className="text-center py-4">No more students to load</div>
             )}
+            <div ref={loaderRef}></div>
           </div>
         ) : (
           <div>
             <StudentTable students={students} />
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={(page) => {
-                setCurrentPage(page);
-                fetchStudents(page);
-              }}
-            />
-            {/* {loading && <div className="text-center py-4">Loading...</div>} */}
-            
+            {/* Show loading on desktop if needed */}
             {loading && (
               <div className="absolute inset-0 flex justify-center items-center bg-white bg-opacity-70 z-10">
                 <div className="text-zinc-800 text-xl">Loading...</div>
@@ -122,10 +114,29 @@ const App = () => {
           </div>
         )}
       </div>
+
+      {/* Show Pagination only on Desktop */}
+      {!isMobile && (
+        <div className="bg-white p-4 shadow-md">
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={(page) => {
+              setCurrentPage(page);
+              fetchStudents(page);
+            }}
+          />
+        </div>
+      )}
+
+      {/* Footer */}
+      <div className="bg-slate-700">
+        <div className="flex p-2 items-center justify-center">
+          <p className="text-white">Developed by Ranjan Gupta</p>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default App;
-
-
